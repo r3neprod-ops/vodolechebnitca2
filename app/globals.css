@@ -1,0 +1,270 @@
+:root {
+  --bg: #f5f9fd;
+  --surface: #ffffff;
+  --text: #15334f;
+  --muted: #4b6782;
+  --primary: #1f6fae;
+  --accent: #21b4aa;
+  --border: #dbe8f4;
+  --shadow: 0 10px 24px rgba(31, 78, 120, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, Arial, sans-serif;
+  color: var(--text);
+  background: linear-gradient(180deg, #f7fbff 0%, var(--bg) 48%, #eef5fb 100%);
+}
+
+.container {
+  width: min(1120px, 92vw);
+  margin: 0 auto;
+}
+
+.headerWrap {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(8px);
+  background: rgba(245, 251, 255, 0.9);
+  border-bottom: 1px solid var(--border);
+}
+
+.header {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.headerActions,
+.heroActions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.phoneText {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.btn {
+  border-radius: 12px;
+  padding: 11px 16px;
+  border: 1px solid transparent;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, var(--primary), #2b82c7);
+  color: #fff;
+}
+
+.btnGhost {
+  color: var(--primary);
+  border-color: #b7d2eb;
+  background: #fff;
+}
+
+.btnLarge {
+  padding: 14px 22px;
+  font-size: 1.05rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 26px;
+  padding: 44px 0 24px;
+}
+
+.heroText h1 {
+  margin: 0 0 14px;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.heroText p {
+  margin: 0 0 20px;
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.heroStats {
+  display: grid;
+  gap: 12px;
+}
+
+.pillCard,
+.card,
+.contactCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.pillCard {
+  padding: 18px;
+}
+
+.pillCard h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.section {
+  padding: 26px 0;
+}
+
+.section h2 {
+  margin: 0 0 14px;
+  font-size: clamp(1.6rem, 3vw, 2rem);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.proceduresGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card {
+  padding: 18px;
+}
+
+.markerCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.markerCard h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-top: 4px;
+  background: linear-gradient(180deg, var(--accent), #4ac8bf);
+  flex-shrink: 0;
+}
+
+.timeline {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timelineItem {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: #fff;
+}
+
+.stepNum {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #e4f3ff;
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+.timelineItem p,
+.card p,
+.card li,
+.contactCard p {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.date {
+  margin: 0;
+  color: #5f7f9b;
+  font-weight: 700;
+}
+
+.link {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.contactsSection .contactCard {
+  padding: 20px;
+}
+
+.clinicName {
+  font-weight: 700;
+  color: var(--text) !important;
+}
+
+.footer {
+  margin-top: 30px;
+  padding: 18px 4vw;
+  border-top: 1px solid var(--border);
+  background: #e8f2fb;
+  font-weight: 700;
+}
+
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 28px;
+  }
+
+  .proceduresGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}

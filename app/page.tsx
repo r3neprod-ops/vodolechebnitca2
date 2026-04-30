@@ -15,7 +15,7 @@ const audience = [
 ];
 
 
-const doctors = [
+const doctors: Array<{ name: string; image: string; alt: string; description: string }> = [
   {
     name: 'Травматолог',
     image: '/image/1.png',

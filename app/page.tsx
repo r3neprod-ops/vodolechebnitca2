@@ -1,23 +1,23 @@
-import { news } from "@/data/news";
+import { news } from '@/data/news';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main style={{ padding: 32, fontFamily: "Arial, sans-serif" }}>
-      <h1>Водолечебница</h1>
-      <p>Проект успешно собирается и готов к деплою на Vercel.</p>
+    <main>
+      <h1>Водолечебница №2</h1>
+      <p>Минимальная версия сайта для успешной сборки и деплоя на Vercel.</p>
 
-      <section>
-        <h2>Новости</h2>
-        <ul>
-          {news.map((item) => (
-            <li key={item.title}>
-              <strong>{item.title}</strong>
-              <p>{item.description}</p>
-              <a href={item.href}>Читать в MAX</a>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <h2>Новости</h2>
+      <ul>
+        {news.map((item) => (
+          <li key={`${item.date}-${item.title}`}>
+            <strong>{item.title}</strong> ({item.date})
+            <p>{item.description}</p>
+            <a href={item.href} target="_blank" rel="noreferrer">
+              Источник
+            </a>
+          </li>
+        ))}
+      </ul>
     </main>
   );
 }

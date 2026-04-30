@@ -2,6 +2,7 @@ import { news } from '@/data/news';
 
 const maxLink = 'https://max.ru/id9403014108_gos';
 const phoneHref = 'tel:+78572931614';
+const mapsLink = 'https://yandex.ru/maps/?text=Луганск%2C%20ул.%20Даля%2C%207';
 
 const audience = [
   'Боли в спине и суставах',
@@ -17,163 +18,126 @@ const routeSteps = [
   'Позвоните или обратитесь в поликлинику.',
   'Попадите на приём к врачу.',
   'Пройдите консультацию.',
-  'Получите назначение на процедуры при наличии медицинских показаний.',
-  'Пройдите курс процедур бесплатно по полису ОМС.',
+  'Получите назначение.',
+  'Пройдите процедуры бесплатно по ОМС.',
 ];
-
-const doctors = ['Травматолог', 'ЛОР', 'Дерматолог', 'Невролог', 'Физиотерапевт'];
 
 const procedures = [
-  'Лечебные ванны',
-  'Лечебные души',
-  'Душ Шарко',
-  'Циркулярный душ',
-  'Восходящий душ',
-  'Подводный душ-массаж',
-  'Гидромассаж',
-  'Физиотерапия',
-  'Электролечение',
-  'Светолечение',
-  'Магнитотерапия',
-  'Ультразвуковая терапия',
-  'Ингаляции',
-  'Массаж',
-  'ЛФК',
-  'Медицинская реабилитация',
-];
-
-const advantages = [
-  'Лечение бесплатно по ОМС',
-  'Государственное медицинское учреждение',
-  'Приём профильных специалистов',
-  'Процедуры назначаются врачом',
-  'Комплексный подход к восстановлению',
-  'Водолечение, физиотерапия и медицинская реабилитация в одном месте',
-  'Удобный график работы с 07:00 до 19:00',
-  'Расположение в Луганске, ул. Даля, 7',
-  'Понятный маршрут пациента',
-  'Не нужно оставлять заявку на сайте — достаточно позвонить или обратиться в учреждение',
+  {
+    title: 'Водолечение',
+    list: [
+      'лечебные ванны',
+      'лечебные души',
+      'душ Шарко',
+      'циркулярный душ',
+      'восходящий душ',
+      'подводный душ-массаж',
+      'гидромассаж',
+    ],
+    description:
+      'Может применяться в составе комплексного лечения и восстановления. Конкретные процедуры назначаются врачом с учётом состояния пациента и противопоказаний.',
+  },
+  {
+    title: 'Физиотерапия',
+    list: ['электролечение', 'светолечение', 'магнитотерапия', 'ультразвуковая терапия', 'ингаляции'],
+    description:
+      'Используется по назначению специалиста после консультации. Подбирается индивидуально при наличии медицинских показаний.',
+  },
+  {
+    title: 'Восстановление',
+    list: ['массаж', 'ЛФК', 'медицинская реабилитация'],
+    description:
+      'Направления могут применяться для поэтапного восстановления после заболеваний, травм и операций в рамках бесплатной помощи по ОМС.',
+  },
 ];
 
 export default function HomePage() {
   return (
     <div className="page">
-      <header className="header container">
-        <p className="brand">ЛРФТП им. А. Е. Щербака</p>
-        <div className="headerActions">
-          <a href="tel:+78572931614" className="phoneText">
-            +7 (8572) 93-16-14
-          </a>
-          <a href={phoneHref} className="btn btnPrimary">
-            Позвонить
-          </a>
-          <a href={maxLink} target="_blank" rel="noreferrer" className="btn btnGhost">
-            Канал MAX
-          </a>
+      <header className="headerWrap">
+        <div className="header container">
+          <p className="brand">ЛРФТП им. А. Е. Щербака</p>
+          <div className="headerActions">
+            <a href={phoneHref} className="phoneText">
+              +7 (8572) 93-16-14
+            </a>
+            <a href={phoneHref} className="btn btnPrimary">
+              Позвонить
+            </a>
+            <a href={maxLink} target="_blank" rel="noreferrer" className="btn btnGhost">
+              Канал MAX
+            </a>
+          </div>
         </div>
       </header>
 
       <main>
         <section className="hero container">
-          <div>
+          <div className="heroText">
             <h1>Водолечение, физиотерапия и реабилитация по ОМС в Луганске</h1>
             <p>
               ГБУЗ «Луганская республиканская физиотерапевтическая поликлиника имени профессора
-              А. Е. Щербака» ЛНР оказывает медицинскую помощь бесплатно по полису ОМС. Приём
-              ведут профильные специалисты, процедуры назначаются врачом при наличии показаний.
+              А. Е. Щербака» ЛНР оказывает медицинскую помощь бесплатно по полису ОМС. Приём ведут
+              профильные специалисты, процедуры назначаются врачом при наличии показаний.
             </p>
             <div className="heroActions">
-              <a href={phoneHref} className="btn btnPrimary">
+              <a href={phoneHref} className="btn btnPrimary btnLarge">
                 Позвонить
               </a>
-              <a href={maxLink} target="_blank" rel="noreferrer" className="btn btnGhost">
-                Открыть канал MAX
+              <a href={maxLink} target="_blank" rel="noreferrer" className="btn btnGhost btnLarge">
+                Канал MAX
               </a>
             </div>
           </div>
-          <aside className="infoCard">
-            <h2>Кратко</h2>
-            <p>
-              <strong>ОМС:</strong> бесплатно
-            </p>
-            <p>
-              <strong>Пн–Пт:</strong> 07:00–19:00
-            </p>
-            <p>
-              <strong>Адрес:</strong> Луганск, ул. Даля, 7
-            </p>
-          </aside>
-        </section>
-
-        <section className="section container">
-          <h2>Что мы делаем</h2>
-          <p>
-            Поликлиника занимается водолечением, физиотерапией и медицинской реабилитацией.
-            Помощь оказывается по назначению врача после консультации специалиста.
-          </p>
+          <div className="heroStats">
+            <article className="pillCard">
+              <h3>Бесплатно по ОМС</h3>
+            </article>
+            <article className="pillCard">
+              <h3>Пн–Пт 07:00–19:00</h3>
+            </article>
+            <article className="pillCard">
+              <h3>Луганск, ул. Даля, 7</h3>
+            </article>
+          </div>
         </section>
 
         <section className="section container">
           <h2>Кому может быть полезно</h2>
           <div className="grid">
             {audience.map((item) => (
-              <article key={item} className="card">
+              <article key={item} className="card markerCard">
+                <span className="dot" aria-hidden="true" />
                 <h3>{item}</h3>
               </article>
             ))}
           </div>
-          <p className="note">Окончательное решение о назначении процедур принимает врач.</p>
         </section>
 
         <section className="section container">
           <h2>Как попасть на процедуры по ОМС</h2>
-          <ol className="steps">
-            {routeSteps.map((step) => (
-              <li key={step}>{step}</li>
+          <ol className="timeline">
+            {routeSteps.map((step, idx) => (
+              <li key={step} className="timelineItem">
+                <span className="stepNum">{idx + 1}</span>
+                <p>{step}</p>
+              </li>
             ))}
           </ol>
         </section>
 
         <section className="section container">
-          <h2>Врачи</h2>
-          <div className="grid">
-            {doctors.map((doctor) => (
-              <article key={doctor} className="card">
-                <h3>{doctor}</h3>
-                <p>
-                  Специалист оценивает состояние пациента и при наличии показаний назначает
-                  процедуры.
-                </p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="section container">
           <h2>Процедуры</h2>
-          <p>
-            В поликлинике могут применяться методы водолечения, физиотерапии и медицинской
-            реабилитации. Конкретный набор процедур определяет врач после осмотра.
-          </p>
-          <div className="grid">
-            {procedures.map((item) => (
-              <article key={item} className="card">
-                <h3>{item}</h3>
-                <p>
-                  Метод может применяться врачом в составе комплексного лечения и восстановления.
-                  Назначается индивидуально, с учётом состояния пациента и противопоказаний.
-                </p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="section container">
-          <h2>Почему выбирают нас</h2>
-          <div className="grid">
-            {advantages.map((item) => (
-              <article key={item} className="card">
-                <h3>{item}</h3>
+          <div className="grid proceduresGrid">
+            {procedures.map((group) => (
+              <article key={group.title} className="card">
+                <h3>{group.title}</h3>
+                <p>{group.description}</p>
+                <ul>
+                  {group.list.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
               </article>
             ))}
           </div>
@@ -195,24 +159,28 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="section container contacts">
+        <section className="section container contactsSection">
           <h2>Контакты</h2>
-          <p>
-            <strong>ГБУЗ «Луганская республиканская физиотерапевтическая поликлиника имени
-            профессора А. Е. Щербака» ЛНР</strong>
-          </p>
-          <p>Адрес: 291001, Луганская Народная Республика, г. Луганск, ул. Даля, д. 7</p>
-          <p>График работы: Пн–Пт: 07:00–19:00</p>
-          <p>Телефон: +7 (8572) 93-16-14</p>
-          <div className="heroActions">
-            <a href={phoneHref} className="btn btnPrimary">
-              Позвонить
-            </a>
-            <a href={maxLink} target="_blank" rel="noreferrer" className="btn btnGhost">
-              Канал MAX
-            </a>
-          </div>
-          <div className="mapPlaceholder">Место для карты</div>
+          <article className="contactCard">
+            <p className="clinicName">
+              ГБУЗ «Луганская республиканская физиотерапевтическая поликлиника имени профессора А.
+              Е. Щербака» ЛНР
+            </p>
+            <p>Адрес: 291001, Луганская Народная Республика, г. Луганск, ул. Даля, д. 7</p>
+            <p>График работы: Пн–Пт: 07:00–19:00</p>
+            <p>Телефон: +7 (8572) 93-16-14</p>
+            <div className="heroActions">
+              <a href={phoneHref} className="btn btnPrimary">
+                Позвонить
+              </a>
+              <a href={maxLink} target="_blank" rel="noreferrer" className="btn btnGhost">
+                Открыть канал MAX
+              </a>
+              <a href={mapsLink} target="_blank" rel="noreferrer" className="btn btnGhost">
+                Открыть в Яндекс.Картах
+              </a>
+            </div>
+          </article>
         </section>
       </main>
 

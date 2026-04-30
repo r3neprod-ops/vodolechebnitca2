@@ -7,6 +7,7 @@
   --accent: #21b4aa;
   --border: #dbe8f4;
   --shadow: 0 10px 24px rgba(31, 78, 120, 0.08);
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 * {
@@ -17,7 +18,14 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: Inter, Arial, sans-serif;
+  font-family: var(--font-sans);
+  font-feature-settings: "kern";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
   color: var(--text);
   background: linear-gradient(180deg, #f7fbff 0%, var(--bg) 48%, #eef5fb 100%);
 }
@@ -62,14 +70,15 @@ body {
 .phoneText {
   color: var(--text);
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .btn {
   border-radius: 12px;
   padding: 11px 16px;
   border: 1px solid transparent;
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   text-decoration: none;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
@@ -105,6 +114,9 @@ body {
 .heroText h1 {
   margin: 0 0 14px;
   font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 750;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
 }
 
 .heroText p {
@@ -144,6 +156,9 @@ body {
 .section h2 {
   margin: 0 0 14px;
   font-size: clamp(1.6rem, 3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
 }
 
 .grid {
@@ -215,7 +230,7 @@ body {
 .card li,
 .contactCard p {
   color: var(--muted);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .date {
@@ -268,24 +283,16 @@ body {
   color: var(--muted);
 }
 
-.flowPlaceholder {
-  margin-top: 16px;
-  min-height: 180px;
-  border-radius: 16px;
-  border: 1px solid #cfe1f2;
-  background: linear-gradient(180deg, #ffffff, #f4f9fe);
-  box-shadow: var(--shadow);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-}
 
-.flowPlaceholder p {
-  margin: 0;
-  color: #5d7891;
-  font-weight: 600;
+.treatmentFlowImage {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin-top: 16px;
+  border-radius: 24px;
+  border: 1px solid rgba(80, 150, 220, 0.25);
+  box-shadow: 0 20px 50px rgba(30, 90, 150, 0.12);
 }
 
 .chips {

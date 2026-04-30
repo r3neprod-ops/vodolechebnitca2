@@ -102,6 +102,16 @@ export default function HomePage() {
                 Канал MAX
               </a>
             </div>
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?ll=39.299758%2C48.579178&z=17&pt=39.299758,48.579178,pm2rdm"
+              title="Карта расположения поликлиники"
+              width="100%"
+              height="250"
+              style={{ border: 0, borderRadius: '16px', marginTop: '14px' }}
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </aside>
         </section>
 

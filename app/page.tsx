@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import YandexMap from '@/app/components/YandexMap';
 import { news } from '@/data/news';
 
 const maxLink = 'https://max.ru/id9403014108_gos';
@@ -19,35 +20,35 @@ const audience = [
 const doctors: Array<{ name: string; image: string; alt: string; description: string }> = [
   {
     name: 'Травматолог',
-    image: '/image/1.png',
+    image: '/image/1.webp',
     alt: 'Травматолог',
     description:
       'Проводит консультации при последствиях травм, болях в суставах и ограничении подвижности. Оценивает состояние опорно-двигательного аппарата и при наличии показаний определяет дальнейшую тактику лечения и восстановления.',
   },
   {
     name: 'Оториноларинголог',
-    image: '/image/4.png',
+    image: '/image/4.webp',
     alt: 'Оториноларинголог',
     description:
       'Консультирует пациентов с заболеваниями ЛОР-органов и жалобами со стороны носа, горла и уха. По результатам осмотра может рекомендовать процедуры и дополнительные методы лечения при наличии медицинских показаний.',
   },
   {
     name: 'Дерматолог',
-    image: '/image/2.png',
+    image: '/image/2.webp',
     alt: 'Дерматолог',
     description:
       'Проводит осмотр при заболеваниях кожи и связанных жалобах. Оценивает состояние пациента и при необходимости определяет рекомендации по лечению, уходу и возможному применению физиотерапевтических методов.',
   },
   {
     name: 'Невролог',
-    image: '/image/5.png',
+    image: '/image/5.webp',
     alt: 'Невролог',
     description:
       'Консультирует пациентов с болями в спине, нарушениями чувствительности, последствиями неврологических заболеваний и другими жалобами со стороны нервной системы. При наличии показаний определяет план лечения и реабилитации.',
   },
   {
     name: 'Физиотерапевт',
-    image: '/image/3.png',
+    image: '/image/3.webp',
     alt: 'Физиотерапевт',
     description:
       'Оценивает показания и противопоказания к физиотерапевтическим процедурам. Подбирает подходящие методы лечения и определяет курс процедур с учётом состояния пациента и рекомендаций профильных специалистов.',
@@ -133,16 +134,7 @@ export default function HomePage() {
                 Канал MAX
               </a>
             </div>
-            <iframe
-              src="https://yandex.ru/map-widget/v1/?ll=39.299758%2C48.579178&z=17&pt=39.299758,48.579178,pm2rdm"
-              title="Карта расположения поликлиники"
-              width="100%"
-              height="250"
-              style={{ border: 0, borderRadius: '16px', marginTop: '14px' }}
-              loading="lazy"
-              allowFullScreen
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+            <YandexMap />
           </aside>
         </section>
 
@@ -165,13 +157,13 @@ export default function HomePage() {
             консультация врача, назначение и прохождение процедур.
           </p>
           <Image
-            src="/image/treatment-flow.png"
+            src="/image/treatment-flow.webp"
             alt="Схема порядка обращения за медицинской помощью"
             width={1448}
             height={1086}
             className="treatmentFlowImage"
             style={{ width: '100%', height: 'auto' }}
-            loading="lazy"
+            priority
           />
         </section>
 

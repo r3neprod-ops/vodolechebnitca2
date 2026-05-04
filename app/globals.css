@@ -31,8 +31,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 50;
-  backdrop-filter: blur(8px);
-  background: rgba(245, 251, 255, 0.9);
+  background: #f5fbff;
   border-bottom: 1px solid var(--border);
 }
 
@@ -114,27 +113,12 @@ body {
   color: var(--muted);
 }
 
-.heroStats {
-  display: grid;
-  gap: 12px;
-}
-
-.pillCard,
 .card,
 .contactCard {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 16px;
   box-shadow: var(--shadow);
-}
-
-.pillCard {
-  padding: 18px;
-}
-
-.pillCard h3 {
-  margin: 0;
-  font-size: 1.15rem;
 }
 
 .section {
@@ -150,10 +134,6 @@ body {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
-}
-
-.proceduresGrid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .card {
@@ -180,37 +160,6 @@ body {
   flex-shrink: 0;
 }
 
-.timeline {
-  display: grid;
-  gap: 12px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.timelineItem {
-  display: grid;
-  grid-template-columns: 38px 1fr;
-  gap: 12px;
-  padding: 14px;
-  border-radius: 14px;
-  border: 1px solid var(--border);
-  background: #fff;
-}
-
-.stepNum {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: #e4f3ff;
-  color: var(--primary);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-}
-
-.timelineItem p,
 .card p,
 .card li,
 .contactCard p {
@@ -268,7 +217,6 @@ body {
   color: var(--muted);
 }
 
-
 .treatmentFlowImage {
   display: block;
   width: 100%;
@@ -308,10 +256,6 @@ body {
   .hero {
     grid-template-columns: 1fr;
     padding-top: 28px;
-  }
-
-  .proceduresGrid {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -394,4 +338,27 @@ body {
   .doctorImage {
     max-height: 220px;
   }
+}
+
+/* YandexMap click-to-load placeholder */
+.mapPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 250px;
+  margin-top: 14px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #e8f3ff 0%, #dbeeff 100%);
+  border: 1px solid #c4dcf5;
+  cursor: pointer;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.mapPlaceholder svg {
+  opacity: 0.6;
 }

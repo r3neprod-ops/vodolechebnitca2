@@ -157,7 +157,7 @@ export default function HomePage() {
             консультация врача, назначение и прохождение процедур.
           </p>
           <Image
-            src="/image/treatment-flow.webp"
+            src="/image/6.webp"
             alt="Схема порядка обращения за медицинской помощью"
             width={1448}
             height={1086}

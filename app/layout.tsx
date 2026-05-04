@@ -21,6 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
+      <head>
+        <link rel="preconnect" href="https://yandex.ru" />
+        <link rel="dns-prefetch" href="https://yandex.ru" />
+      </head>
       <body>{children}</body>
     </html>
   );

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { news } from '@/data/news';
 
 const maxLink = 'https://max.ru/id9403014108_gos';
@@ -163,10 +164,14 @@ export default function HomePage() {
             Наглядная схема поможет разобраться в порядке обращения: оформление документов,
             консультация врача, назначение и прохождение процедур.
           </p>
-          <img
+          <Image
             src="/image/treatment-flow.png"
             alt="Схема порядка обращения за медицинской помощью"
+            width={1448}
+            height={1086}
             className="treatmentFlowImage"
+            style={{ width: '100%', height: 'auto' }}
+            loading="lazy"
           />
         </section>
 
@@ -177,7 +182,16 @@ export default function HomePage() {
               <article key={doctor.name} className="card doctorCard">
                 <div className="doctorImageWrap">
                   <span className="doctorBadge">Специалист</span>
-                  <img src={doctor.image} alt={doctor.alt} className="doctorImage" />
+                  <Image
+                    src={doctor.image}
+                    alt={doctor.alt}
+                    width={561}
+                    height={701}
+                    className="doctorImage"
+                    style={{ width: '100%', height: 'auto' }}
+                    sizes="(max-width: 760px) 92vw, (max-width: 980px) 42vw, 231px"
+                    loading="lazy"
+                  />
                 </div>
                 <div className="doctorContent">
                   <h3>{doctor.name}</h3>

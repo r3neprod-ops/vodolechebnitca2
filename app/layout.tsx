@@ -43,6 +43,22 @@ export default function RootLayout({
             `,
           }}
         />
+        <Script
+          id="yandex-pixel"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(){
+                var img=document.createElement('img');
+                img.src='https://mc.yandex.ru/pixel/1598121936973594076?rnd='+Math.random();
+                img.style.cssText='position:absolute;left:-9999px;';
+                img.alt='';
+                img.width=1;img.height=1;
+                document.body.appendChild(img);
+              })();
+            `,
+          }}
+        />
         <noscript>
           <div>
             <img
